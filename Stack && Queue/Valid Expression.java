@@ -4,61 +4,32 @@ class Solution
     { 
         // code here
         Stack<Character>st=new Stack<>();
-        for(int i=0;i<s.length();i++)
+        for(char ch:s.toCharArray())
         {
-            char ch=s.charAt(i);
-            if(ch=='(' || ch=='{' || ch=='[')
+            if(ch=='('||ch=='{'||ch=='[')
             {
                 st.push(ch);
             }
-            else if(st.size()>0)
+            else 
             {
-                if(ch==')')
+                 if(st.size()>0 && ch=='}' && st.peek()=='{')
                 {
-                    if(st.peek()=='(')
-                    {
-                        st.pop();
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    st.pop();
                 }
-                else if(ch=='}')
+                else if(st.size()>0 && ch==']' && st.peek()=='[')
                 {
-                    if(st.peek()=='{')
-                    {
-                        st.pop();
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    st.pop();
                 }
-                else if(ch==']')
+                else if(st.size()>0 && ch==')' && st.peek()=='(')
                 {
-                    if(st.peek()=='[')
-                    {
-                        st.pop();
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    st.pop();
                 }
-            }
                 else
                 {
                     return false;
                 }
+            }
         }
-        if(st.size()>0)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+       return(st.size()==0?true:false);
     }
 } 
