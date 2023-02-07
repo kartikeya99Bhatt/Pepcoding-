@@ -12,13 +12,17 @@ public static void main(String[] args) throws Exception {
         a[i]=scn.nextInt();
     }
     int val=scn.nextInt();
+    boolean flag=false;
     for(int i=0;i<n;i++)
     {
         if(a[i]==val)
         {
             System.out.println(i);
+            flag=true;
+            break;
         }
     }
+    if(falg==false)
     System.out.println("-1");
  }
 
