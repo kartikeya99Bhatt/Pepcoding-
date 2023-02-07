@@ -22,7 +22,7 @@ public static void main(String[] args) throws Exception {
             break;
         }
     }
-    if(falg==false)
+    if(flag==false)
     System.out.println("-1");
  }
 
