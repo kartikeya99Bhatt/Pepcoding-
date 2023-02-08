@@ -10,34 +10,38 @@ public class Main{
     }
     System.out.println(sb);
   }
-  public static void rotate2(int []a,int i,int j)
+  public static void Reverse(int []a,int i,int j)
   {
       while(i<j)
       {
           int temp=a[i];
           a[i]=a[j];
           a[j]=temp;
-          i++;
-          j--;
+          i++;j--;
       }
   }
 
   public static void rotate(int[] a, int k){
     // write your code here
-    rotate2(a,a.length-k,a.length-1);
-    rotate2(a,0,a.length-k-1);
-    rotate2(a,0,a.length-1);
+    k=k%a.length;
+    if(k<0)
+    {
+        k=k+a.length;
+    }
+    Reverse(a,0,a.length-k-1);
+    Reverse(a,a.length-k,a.length-1);
+    Reverse(a,0,a.length-1);
   }
 
 public static void main(String[] args) throws Exception {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  Scanner scn=new Scanner(System.in);
 
-    int n = Integer.parseInt(br.readLine());
+    int n = scn.nextInt();
     int[] a = new int[n];
     for(int i = 0; i < n; i++){
-       a[i] = Integer.parseInt(br.readLine());
+       a[i] =  scn.nextInt();
     }
-    int k = Integer.parseInt(br.readLine());
+    int k =  scn.nextInt();
 
     rotate(a, k);
     display(a);
