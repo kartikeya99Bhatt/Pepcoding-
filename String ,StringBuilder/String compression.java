@@ -56,6 +56,7 @@ public class Main {
 		    }
 		}
 		sb.append(pre);
+		 if(cnt!=1)
 		sb.append(cnt);
 
 		return sb.toString();
