@@ -1,0 +1,24 @@
+Q what is interning ?
+ sharing same menory 
+ 
+Q  why interning is done ?
+  to save space and memory 
+  
+Q  What are it's implication of interning ?
+  A=>
+   1. (==) is not good to use it will only check the stack address
+   2. .equals() it will check character by character 
+   
+   B=>
+    string in java are immutable 
+     Q  what is imutable
+      (cannot be change)
+     -Reference are mutable and Instance are immutable .
+     
+    Q  why string are immutable ?
+     if i will change any character all string will cahge 
+     
+  Q   what are its implcation ?
+      performance of string is poor/slow
+    
+   
