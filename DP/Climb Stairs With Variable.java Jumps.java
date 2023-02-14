@@ -55,3 +55,35 @@ public static int climbStair(int n,int st,int []arr)
 
 
 // TABULATION
+
+    public static void main(String[] args) throws Exception {
+        // write your code here
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int []arr=new int[n];
+        int []dp=new int[n+1];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=scn.nextInt();
+        }
+        climbStairs(arr,dp);
+        System.out.println(dp[0]);
+    }
+    public static void climbStairs(int []arr,int []dp)
+    {
+        dp[arr.length]=1;
+        for(int i=arr.length-1;i>=0;i--)
+        {
+            for(int j=1;j<=arr[i];j++)
+            {
+                if(i+j<=arr.length)
+                {
+                    dp[i]+=dp[i+j];
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+    }
