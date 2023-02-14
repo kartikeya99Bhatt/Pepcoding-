@@ -19,7 +19,7 @@ public class Main {
         int [][]dp=new int [n][m];
         solve(arr,dp);
         int max=dp[0][0];
-        for(int i=0;i<m;i++)
+        for(int i=0;i<n;i++)
         {
             max=Math.max(max,dp[i][0]);
         }
