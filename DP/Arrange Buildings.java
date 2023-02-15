@@ -7,16 +7,16 @@ public static void main(String[] args) throws Exception {
     // write your code here
     Scanner scn=new Scanner(System.in);
     int n=scn.nextInt();
-    int b=1;
-    int s=1;
+    long b=1;
+    long s=1;
     for(int i=2;i<=n;i++)
     {
-        int nb=s;
-        int ns=s+b;
+        long nb=s;
+        long ns=s+b;
         b=nb;
         s=ns;
     }
-    int osde=b+s;
+    long osde=b+s;
     System.out.println(osde*osde);
  }
 
