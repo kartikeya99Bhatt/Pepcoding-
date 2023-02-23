@@ -47,6 +47,43 @@
  }
 
 
+//ZIG-ZAG Patten 
+
+public static void levelOrderLinewiseZZ(Node node){
+    // write your code here
+    Stack<Node>ms=new Stack<>();
+    Stack<Node>hs=new Stack<>();
+    int lv=0;
+    ms.push(node);
+    
+    while(ms.size()>0)
+    {
+        Node temp=ms.pop();
+        System.out.print(temp.data+" ");
+        if(lv%2==0)
+        {
+            for(Node child:temp.children)
+            {
+                hs.add(child);
+            }
+        }
+        else 
+        {
+            for(int i=temp.children.size()-1;i>=0;i--)
+            {
+                 hs.add(temp.children.get(i));
+            }
+        }
+        if(ms.size()==0)
+        {
+            System.out.println();
+            ms=hs;
+            hs=new Stack<>();
+            lv++;
+        }
+    }
+  }
+
 
 // APPROCH 3 (LinkedList)
 
