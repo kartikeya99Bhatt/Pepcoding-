@@ -1,9 +1,5 @@
  public static Node remove(Node node, int data) {
     // write your code here
-    if(node==null)
-    {
-        return null;
-    }
     if(node.data==data)
     {
         if(node.left==null && node.right==null)
@@ -15,6 +11,7 @@
             int newdata=getLeftMax(node.left);
             node.data=newdata;
             node.left=remove(node.left,node.data);
+            return node;
         }
         else if(node.left==null)
         {
